@@ -24,9 +24,9 @@ function Home() {
             .then((res) => {
                 if (res.status === 204) alert("Note deleted!");
                 else alert("Failed to delete note.");
+                getNotes()
             })
             .catch((err) => alert(err));
-        getNotes()
     }
 
     const createNote = (e) => {
@@ -36,9 +36,10 @@ function Home() {
             .then((res) => {
                 if (res.status === 201) alert("Note created!");
                 else alert("Failed to create note.");
+                getNotes();
             })
             .catch((err) => alert(err));
-        getNotes()
+        
     };
 
     useEffect(() => {
